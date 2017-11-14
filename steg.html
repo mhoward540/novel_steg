@@ -1,0 +1,54 @@
+<html>
+<head>
+	<script src="steg.js"></script>
+	<title>Novel Steganography by MH</title>
+</head>
+<body>
+	<h1> Novel Steganography </h1>
+	<p> Novel steganography implementation by Matt Howard </p>
+	<p>Instructions: Fill out the keys, select an image, and click "Go". You must input all 5 keys. Each key has a lower and higher bound. Each key's range must be at least 31, i.e. higher - lower >= 31. Keys must not overlap. Please do not compress resulting images.</p>
+	<table>
+		<tr>
+			<td></td>
+			<td>Lower bound</td>
+			<td>Upper bound</td>
+		</tr>
+		<tr>
+		  <td>Key 1</td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-lower-one"\></td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-upper-one"\></td>
+		</tr>
+		<tr>
+		  <td>Key 2</td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-lower-two"\></td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-upper-two"\></td>
+		</tr>
+		<tr>
+		  <td>Key 3</td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-lower-three"\></td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-upper-three"\></td>
+		</tr>
+		<tr>
+		  <td>Key 4</td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-lower-four"\></td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-upper-four"\></td>
+		</tr>
+		<tr>
+		  <td>Key 5</td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-lower-five"\></td>
+		  <td><input type="number" min="0" max="255" id="js-rangekey-upper-five"\></td>
+		</tr>
+	</table>
+	<form>
+		<input id="js-image-input" type="file" accept="image/*"> <br>
+		<input id="js-file-input" type="file" value="Click to select input file"\> <br>
+	</form>
+	<form id="js-encode-radio">
+		<input type="radio" name="mode" value="encode">Encode</input>
+		<input type="radio" name="mode" value="decode">Decode</input>
+	</form>
+	<button type="button" id="js-calculate-capacity"> Calculate capacity </button> <br>
+	<button type="button" id="js-go-button"> Go </button> <br>
+	<canvas id="js-image-canvas"></canvas>
+</body>
+</html>
